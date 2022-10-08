@@ -23,16 +23,28 @@ export const typographyCommon: Typography = {
     fontSize: 16,
   },
   h3: {
-    fontFamily: 'Roboto_500Medium',
+    fontFamily: 'Roboto_400Regular',
     fontSize: 16,
   },
 };
 
 export const colors: PaletteType = {
-  blue: Colors.blue,
-  black: Colors.black,
-  gray20: Colors.gray20,
-  gray10: Colors.gray10,
-  gray: Colors.gray,
-  white: Colors.white,
+  blue: {
+    main: Colors.blue,
+  },
+  black: {
+    main: Colors.black,
+  },
+  gray20: {
+    main: Colors.gray20,
+  },
+  gray10: {
+    main: Colors.gray10,
+  },
+  gray: {
+    main: Colors.gray,
+  },
+  white: {
+    main: Colors.white,
+  },
 };

@@ -13,13 +13,25 @@ declare module 'styled-components' {
     medium4: number;
   }
 
+  export interface ColorType {
+    main: string;
+  }
+
+  export type ColorsType =
+    | 'blue'
+    | 'black'
+    | 'gray20'
+    | 'gray10'
+    | 'gray'
+    | 'white';
+
   type PaletteType = {
-    blue: string;
-    black: string;
-    gray20: string;
-    gray10: string;
-    gray: string;
-    white: string;
+    blue: ColorType;
+    black: ColorType;
+    gray20: ColorType;
+    gray10: ColorType;
+    gray: ColorType;
+    white: ColorType;
   };
 
   export interface TypographyProps {
