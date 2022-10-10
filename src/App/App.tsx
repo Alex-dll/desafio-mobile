@@ -8,8 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from '../constants/style/theme/theme';
 
 import { Container } from './styles';
-import Typography from '../components/Typography';
-import Icon from '../components/Icon';
+import Home from '../screens/Home';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -24,11 +23,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <Typography fontStyle="h1" color="black">
-          Welcome to BeMobile App
-        </Typography>
-        <Icon icon="search" size={17} activeColor="black" />
         <StatusBar style="auto" />
+
+        <Home />
       </Container>
     </ThemeProvider>
   );
