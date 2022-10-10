@@ -5,6 +5,10 @@ export const Container = styled.View`
   width: 100%;
 `;
 
-export const TextContainer = styled.View`
+export const Wrapper = styled.View`
   padding: 20px;
+`;
+
+export const TextContainer = styled.View`
+  padding: 20px 0 28px;
 `;
