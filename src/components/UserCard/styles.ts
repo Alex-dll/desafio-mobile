@@ -20,6 +20,10 @@ export const ElipseView = styled.View`
 
 export const Card = styled.View`
   margin-bottom: 1px;
+  margin-left: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-color: rgba(0, 0, 0, 0.2);
 `;
 
 export const HeaderCard = styled.View`
