@@ -35,6 +35,10 @@ interface CardImageProps extends ImageProps {
   source: ImageSourcePropType;
 }
 
+export const FlatListContainer = styled.View`
+  height: 500px;
+`;
+
 export const CardImage = styled.Image.attrs<CardImageProps>(
   ({ source }) => source,
 )`

@@ -15,6 +15,7 @@ import {
   CardImage,
   BodyCard,
   RowCard,
+  FlatListContainer,
 } from './styles';
 import formatPhone from '../../utils/formatPhone';
 import formatDate from '../../utils/formatDate';
@@ -97,19 +98,19 @@ const UserCard: React.FC<UserCardProps> = ({ users }: UserCardProps) => {
   }
 
   return (
-    <Container>
+    <FlatListContainer>
       <HeaderCardComponent />
-
       {!!users && (
         <FlatList
           keyExtractor={user => `${user.id}`}
           data={users}
+          showsVerticalScrollIndicator={false}
           ListEmptyComponent={<Typography>Sem Funcionários</Typography>}
           ItemSeparatorComponent={Separator}
           renderItem={renderItem}
         />
       )}
-    </Container>
+    </FlatListContainer>
   );
 };
 
