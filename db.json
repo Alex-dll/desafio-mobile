@@ -1,0 +1,88 @@
+{
+  "users": [
+    {
+      "photo": "./assets/users/photo1.png",
+      "name": "Giovana L. Arruda",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo2.png",
+      "name": "Vanessa Machado",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo3.png",
+      "name": "Juliana Borba",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo4.png",
+      "name": "Josiane Dias",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo5.png",
+      "name": "Reginaldo Felipe",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo6.png",
+      "name": "Grabriel D.",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo7.png",
+      "name": "Silvio  de Carvalho",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo8.png",
+      "name": "Ormar A. Amaral",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo9.png",
+      "name": "João Pedro Farias",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo10.png",
+      "name": "Caroline Rocha da Silva",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo11.png",
+      "name": "Caroline Rocha da Silva",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    },
+    {
+      "photo": "./assets/users/photo12.png",
+      "name": "Giovana L. Arruda",
+      "office": "Front-end",
+      "admission-date": "2022-10-11T00:38:32.037Z",
+      "phone-number": 5561994170022
+    }
+  ]
+}

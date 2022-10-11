@@ -18,6 +18,8 @@ import { TouchableOpacity } from 'react-native';
 import formatPhone from '../../utils/formatPhone';
 import formatDate from '../../utils/formatDate';
 
+console.log(new Date());
+
 const PeopleCard: React.FC<UserCardProps> = ({
   imageSrc,
   name,
