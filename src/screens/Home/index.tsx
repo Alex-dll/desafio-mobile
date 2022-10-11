@@ -13,13 +13,35 @@ import { Container, Wrapper, TextContainer, CardsContainer } from './styles';
 const Home: React.FC = () => {
   const refSearch = useRef<InputValueRef>({ value: '' });
   const [users, setUsers] = useState<Users>([] as Users);
+  const [usersFiltered, setUsersFiltered] = useState<Users | undefined>(
+    undefined,
+  );
+  const [finallyUsers, setFinallyUsers] = useState<Users>([] as Users);
+
+  async function getUsersByFetch() {
+    const data = await getUsers();
+    setUsers(data);
+  }
+
+  const handleChangeUsersFiltered = useCallback(() => {
+    const usersFined = users.filter(user =>
+      user.name.includes(refSearch.current.value),
+    );
+
+    setUsersFiltered(usersFined);
+  }, [users]);
 
   useEffect(() => {
-    (async () => {
-      const data = await getUsers();
-      setUsers(data);
-    })();
+    getUsersByFetch();
   }, []);
+
+  useEffect(() => {
+    if (!usersFiltered || !refSearch.current.value) {
+      setFinallyUsers(users);
+    } else {
+      setFinallyUsers(usersFiltered);
+    }
+  }, [users, usersFiltered]);
 
   return (
     <Container>
@@ -31,9 +53,15 @@ const Home: React.FC = () => {
           </Typography>
         </TextContainer>
 
-        <Input ref={refSearch} placeholder="Pesquisar" />
+        <Input
+          ref={refSearch}
+          placeholder="Pesquisar"
+          onChangeText={handleChangeUsersFiltered}
+        />
 
-        <CardsContainer>{!!users && <UserCard users={users} />}</CardsContainer>
+        <CardsContainer>
+          {!!users && <UserCard users={finallyUsers} />}
+        </CardsContainer>
       </Wrapper>
     </Container>
   );
