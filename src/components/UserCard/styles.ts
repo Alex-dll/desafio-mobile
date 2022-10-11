@@ -36,7 +36,9 @@ interface CardImageProps extends ImageProps {
 }
 
 export const FlatListContainer = styled.View`
-  height: 500px;
+  max-height: 500px;
+  height: 80%;
+  padding-bottom: 20px;
 `;
 
 export const CardImage = styled.Image.attrs<CardImageProps>(
