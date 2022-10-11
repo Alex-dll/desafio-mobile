@@ -12,3 +12,7 @@ export const Wrapper = styled.View`
 export const TextContainer = styled.View`
   padding: 20px 0 28px;
 `;
+
+export const CardsContainer = styled.View`
+  margin-top: 20px;
+`;
