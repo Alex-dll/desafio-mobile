@@ -19,9 +19,7 @@ export const ElipseView = styled.View`
 `;
 
 export const Card = styled.View`
-  margin-bottom: 1px;
   margin-left: 1px;
-  border-bottom-width: 1px;
   border-left-width: 1px;
   border-color: rgba(0, 0, 0, 0.2);
 `;
@@ -42,7 +40,7 @@ export const CardImage = styled.Image.attrs<CardImageProps>(
 )`
   width: 34px;
   height: 34px;
-  border-radius: 50%;
+  border-radius: 14px;
 `;
 
 export const BodyCard = styled.View``;

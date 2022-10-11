@@ -1,88 +1,100 @@
 {
   "users": [
     {
-      "photo": "./assets/users/photo1.png",
+      "id": 1,
+      "photo": "photo1",
       "name": "Giovana L. Arruda",
       "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo2.png",
+      "id": 2,
+      "photo": "photo2",
       "name": "Vanessa Machado",
-      "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "office": "Back-end",
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo3.png",
+      "id": 3,
+      "photo": "photo3",
       "name": "Juliana Borba",
-      "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "office": "Mobile",
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo4.png",
+      "id": 4,
+      "photo": "photo4",
       "name": "Josiane Dias",
-      "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "office": "Designer",
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo5.png",
+      "id": 5,
+      "photo": "photo5",
       "name": "Reginaldo Felipe",
-      "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "office": "PM",
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo6.png",
+      "id": 6,
+      "photo": "photo6",
       "name": "Grabriel D.",
-      "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "office": "PO",
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo7.png",
+      "id": 7,
+      "photo": "photo7",
       "name": "Silvio  de Carvalho",
       "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo8.png",
+      "id": 8,
+      "photo": "photo8",
       "name": "Ormar A. Amaral",
       "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo9.png",
+      "id": 9,
+      "photo": "photo9",
       "name": "João Pedro Farias",
       "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo10.png",
+      "id": 10,
+      "photo": "photo10",
       "name": "Caroline Rocha da Silva",
       "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo11.png",
+      "id": 11,
+      "photo": "photo11",
       "name": "Caroline Rocha da Silva",
       "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     },
     {
-      "photo": "./assets/users/photo12.png",
+      "id": 12,
+      "photo": "photo12",
       "name": "Giovana L. Arruda",
       "office": "Front-end",
-      "admission-date": "2022-10-11T00:38:32.037Z",
-      "phone-number": 5561994170022
+      "admissionDate": "2022-10-11T00:38:32.037Z",
+      "phoneNumber": 5561994170022
     }
   ]
 }

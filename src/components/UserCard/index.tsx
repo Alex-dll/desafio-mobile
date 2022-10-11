@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
+import { FlatList, ListRenderItemInfo, TouchableOpacity } from 'react-native';
+
 import Icon from '../Icon';
 import Typography from '../Typography';
 import { Ellipse } from '../utils/Elipse';
-import type { UserCardProps } from './types';
+import type { UserCardTypes, UserCardProps } from './types';
 
 import {
   Container,
@@ -14,69 +16,12 @@ import {
   BodyCard,
   RowCard,
 } from './styles';
-import { TouchableOpacity } from 'react-native';
 import formatPhone from '../../utils/formatPhone';
 import formatDate from '../../utils/formatDate';
+import { Separator } from '../utils/Separator';
+import photos from '../../constants/photos';
 
-console.log(new Date());
-
-const PeopleCard: React.FC<UserCardProps> = ({
-  imageSrc,
-  name,
-  office,
-  admissionDate,
-  phoneNumber,
-}: UserCardProps) => {
-  const [isOpened, setIsOpened] = useState(false);
-
-  return (
-    <Card>
-      <HeaderCard>
-        <CardImage source={{ uri: imageSrc }} />
-        <Typography fontStyle="h2" color="black">
-          {name}
-        </Typography>
-        <TouchableOpacity onPress={() => setIsOpened(prev => !prev)}>
-          <Icon
-            icon={isOpened ? 'chevronUp' : 'chevronDown'}
-            activeColor="blue"
-            size={32}
-          />
-        </TouchableOpacity>
-      </HeaderCard>
-      {isOpened && (
-        <BodyCard>
-          <RowCard>
-            <Typography fontStyle="h2" color="black">
-              Cargo
-            </Typography>
-            <Typography fontStyle="h3" color="black">
-              {office}
-            </Typography>
-          </RowCard>
-          <RowCard>
-            <Typography fontStyle="h2" color="black">
-              Data de admissão
-            </Typography>
-            <Typography fontStyle="h3" color="black">
-              {`${admissionDate}`}
-            </Typography>
-          </RowCard>
-          <RowCard>
-            <Typography fontStyle="h2" color="black">
-              Telefone
-            </Typography>
-            <Typography fontStyle="h3" color="black">
-              {`${phoneNumber}`}
-            </Typography>
-          </RowCard>
-        </BodyCard>
-      )}
-    </Card>
-  );
-};
-
-const UserCard: React.FC = () => {
+const HeaderCardComponent = () => {
   return (
     <Container>
       <Header>
@@ -90,35 +35,80 @@ const UserCard: React.FC = () => {
           <Ellipse />
         </ElipseView>
       </Header>
+    </Container>
+  );
+};
 
-      <PeopleCard
-        name="Giovana L. Arruda"
-        imageSrc="https://reactjs.org/logo-og.png"
-        office="Front-end"
-        admissionDate={formatDate(new Date())}
-        phoneNumber={formatPhone(5561994170022)}
-      />
-      <PeopleCard
-        name="Giovana L. Arruda"
-        imageSrc="https://reactjs.org/logo-og.png"
-        office="Front-end"
-        admissionDate={formatDate(new Date())}
-        phoneNumber={formatPhone(5561994170022)}
-      />
-      <PeopleCard
-        name="Giovana L. Arruda"
-        imageSrc="https://reactjs.org/logo-og.png"
-        office="Front-end"
-        admissionDate={formatDate(new Date())}
-        phoneNumber={formatPhone(5561994170022)}
-      />
-      <PeopleCard
-        name="Giovana L. Arruda"
-        imageSrc="https://reactjs.org/logo-og.png"
-        office="Front-end"
-        admissionDate={formatDate(new Date())}
-        phoneNumber={formatPhone(5561994170022)}
-      />
+const PeopleCard: React.FC<UserCardTypes> = memo(
+  ({ photo, name, office, admissionDate, phoneNumber }: UserCardTypes) => {
+    const [isOpened, setIsOpened] = useState(false);
+
+    return (
+      <Card>
+        <HeaderCard>
+          <CardImage source={photos[photo]} />
+          <Typography fontStyle="h2" color="black">
+            {name}
+          </Typography>
+          <TouchableOpacity onPress={() => setIsOpened(prev => !prev)}>
+            <Icon
+              icon={isOpened ? 'chevronUp' : 'chevronDown'}
+              activeColor="blue"
+              size={32}
+            />
+          </TouchableOpacity>
+        </HeaderCard>
+        {isOpened && (
+          <BodyCard>
+            <RowCard>
+              <Typography fontStyle="h2" color="black">
+                Cargo
+              </Typography>
+              <Typography fontStyle="h3" color="black">
+                {office}
+              </Typography>
+            </RowCard>
+            <RowCard>
+              <Typography fontStyle="h2" color="black">
+                Data de admissão
+              </Typography>
+              <Typography fontStyle="h3" color="black">
+                {formatDate(admissionDate)}
+              </Typography>
+            </RowCard>
+            <RowCard>
+              <Typography fontStyle="h2" color="black">
+                Telefone
+              </Typography>
+              <Typography fontStyle="h3" color="black">
+                {formatPhone(phoneNumber)}
+              </Typography>
+            </RowCard>
+          </BodyCard>
+        )}
+      </Card>
+    );
+  },
+);
+
+const UserCard: React.FC<UserCardProps> = ({ users }: UserCardProps) => {
+  function renderItem({ item }: ListRenderItemInfo<UserCardTypes>) {
+    return <PeopleCard {...item} />;
+  }
+
+  return (
+    <Container>
+      <HeaderCardComponent />
+
+      {!!users && (
+        <FlatList
+          keyExtractor={user => `${user.id}`}
+          data={users}
+          ListEmptyComponent={<Typography>Sem Funcionários</Typography>}
+          ItemSeparatorComponent={Separator}
+          renderItem={renderItem}
+        />
+      )}
     </Container>
   );
 };
