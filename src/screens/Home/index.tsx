@@ -24,8 +24,11 @@ const Home: React.FC = () => {
   }
 
   const handleChangeUsersFiltered = useCallback(() => {
-    const usersFined = users.filter(user =>
-      user.name.includes(refSearch.current.value),
+    const usersFined = users.filter(
+      user =>
+        user.name.includes(refSearch.current.value) ||
+        user.office.includes(refSearch.current.value) ||
+        user.phoneNumber.toString().includes(refSearch.current.value),
     );
 
     setUsersFiltered(usersFined);

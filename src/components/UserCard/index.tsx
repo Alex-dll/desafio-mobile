@@ -6,6 +6,8 @@ import Typography from '../Typography';
 import { Ellipse } from '../utils/Elipse';
 import type { UserCardTypes, UserCardProps } from './types';
 
+import Reanimated, { FadeInUp } from 'react-native-reanimated';
+
 import {
   Container,
   Header,
@@ -13,7 +15,6 @@ import {
   ElipseView,
   Card,
   CardImage,
-  BodyCard,
   RowCard,
   FlatListContainer,
 } from './styles';
@@ -45,49 +46,51 @@ const PeopleCard: React.FC<UserCardTypes> = memo(
     const [isOpened, setIsOpened] = useState(false);
 
     return (
-      <Card>
-        <HeaderCard>
-          <CardImage source={photos[photo]} />
-          <Typography fontStyle="h2" color="black">
-            {name}
-          </Typography>
-          <TouchableOpacity onPress={() => setIsOpened(prev => !prev)}>
-            <Icon
-              icon={isOpened ? 'chevronUp' : 'chevronDown'}
-              activeColor="blue"
-              size={32}
-            />
-          </TouchableOpacity>
-        </HeaderCard>
-        {isOpened && (
-          <BodyCard>
-            <RowCard>
-              <Typography fontStyle="h2" color="black">
-                Cargo
-              </Typography>
-              <Typography fontStyle="h3" color="black">
-                {office}
-              </Typography>
-            </RowCard>
-            <RowCard>
-              <Typography fontStyle="h2" color="black">
-                Data de admissão
-              </Typography>
-              <Typography fontStyle="h3" color="black">
-                {formatDate(admissionDate)}
-              </Typography>
-            </RowCard>
-            <RowCard>
-              <Typography fontStyle="h2" color="black">
-                Telefone
-              </Typography>
-              <Typography fontStyle="h3" color="black">
-                {formatPhone(phoneNumber)}
-              </Typography>
-            </RowCard>
-          </BodyCard>
-        )}
-      </Card>
+      <Reanimated.View entering={FadeInUp}>
+        <Card>
+          <HeaderCard>
+            <CardImage source={photos[photo]} />
+            <Typography fontStyle="h2" color="black">
+              {name}
+            </Typography>
+            <TouchableOpacity onPress={() => setIsOpened(prev => !prev)}>
+              <Icon
+                icon={isOpened ? 'chevronUp' : 'chevronDown'}
+                activeColor="blue"
+                size={32}
+              />
+            </TouchableOpacity>
+          </HeaderCard>
+          {isOpened && (
+            <Reanimated.View entering={FadeInUp}>
+              <RowCard>
+                <Typography fontStyle="h2" color="black">
+                  Cargo
+                </Typography>
+                <Typography fontStyle="h3" color="black">
+                  {office}
+                </Typography>
+              </RowCard>
+              <RowCard>
+                <Typography fontStyle="h2" color="black">
+                  Data de admissão
+                </Typography>
+                <Typography fontStyle="h3" color="black">
+                  {formatDate(admissionDate)}
+                </Typography>
+              </RowCard>
+              <RowCard>
+                <Typography fontStyle="h2" color="black">
+                  Telefone
+                </Typography>
+                <Typography fontStyle="h3" color="black">
+                  {formatPhone(phoneNumber)}
+                </Typography>
+              </RowCard>
+            </Reanimated.View>
+          )}
+        </Card>
+      </Reanimated.View>
     );
   },
 );
