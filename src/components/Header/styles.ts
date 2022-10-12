@@ -6,4 +6,5 @@ export const Container = styled.View`
   height: 60px;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.black.main};
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
 `;
