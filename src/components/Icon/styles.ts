@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+
 import type { IconProps } from './types';
 
 type ImageProps = Required<Pick<IconProps, 'size'>>;

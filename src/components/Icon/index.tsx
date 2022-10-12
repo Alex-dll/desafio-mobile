@@ -1,12 +1,16 @@
-import { IconContainer } from './styles';
-import { IconProps } from './types';
+import React from 'react';
+
+import type { IconProps } from './types';
 
 import Icons from '../../constants/icons';
+import { colors } from '../../constants/style/theme/common';
+
+import { IconContainer } from './styles';
 
 const Icon: React.FC<Omit<IconProps, 'source'>> = ({
   icon,
   size = 20,
-  activeColor,
+  activeColor = 'gray10',
   style,
 }: Omit<IconProps, 'source'>) => {
   if (activeColor) {
@@ -14,7 +18,7 @@ const Icon: React.FC<Omit<IconProps, 'source'>> = ({
       <IconContainer
         size={size}
         source={Icons[icon]}
-        style={[{ tintColor: activeColor }, style]}
+        style={[{ tintColor: colors[activeColor].main }, style]}
       />
     );
   }
