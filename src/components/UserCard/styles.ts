@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
-import { ImageProps, ImageSourcePropType } from 'react-native';
+
+import type { ImageProps, ImageSourcePropType } from 'react-native';
 
 export const Container = styled.View``;
 

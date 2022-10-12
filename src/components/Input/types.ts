@@ -1,6 +1,6 @@
-import { TextInputProps } from 'react-native';
-import { ColorsType } from 'styled-components';
-import { NameIconsTypes } from '../../constants/icons';
+import type { TextInputProps } from 'react-native';
+import type { ColorsType } from 'styled-components';
+import type { NameIconsTypes } from '../../constants/icons';
 
 export interface InputProps extends TextInputProps {
   icon?: NameIconsTypes;

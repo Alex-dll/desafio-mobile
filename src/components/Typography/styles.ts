@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
-import { ITypography } from './types';
+
+import type { ITypography } from './types';
 
 type TextContainerProps = Required<Pick<ITypography, 'color' | 'fontStyle'>>;
 

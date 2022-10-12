@@ -4,10 +4,12 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { InputProps, InputValueRef } from './types';
+
+import type { InputProps, InputValueRef } from './types';
 
 import { InputContainer, Border, InputInternal, IconContainer } from './styles';
 import { colors } from '../../constants/style/theme/common';
+
 import Icon from '../Icon';
 
 const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = (

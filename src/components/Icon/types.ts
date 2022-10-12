@@ -1,6 +1,6 @@
-import { ImageProps } from 'react-native';
-import { ColorsType } from 'styled-components';
-import { NameIconsTypes } from '../../constants/icons';
+import type { ImageProps } from 'react-native';
+import type { ColorsType } from 'styled-components';
+import type { NameIconsTypes } from '../../constants/icons';
 
 export interface IconOptionProps {
   icon: NameIconsTypes;

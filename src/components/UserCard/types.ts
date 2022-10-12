@@ -1,4 +1,4 @@
-import { NamePhotoTypes } from '../../constants/photos';
+import type { NamePhotoTypes } from '../../constants/photos';
 
 export type UserCardTypes = {
   id: number;

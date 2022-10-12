@@ -1,5 +1,6 @@
 import React from 'react';
-import { ITypography } from './types';
+
+import type { ITypography } from './types';
 
 import { TextContainer } from './styles';
 

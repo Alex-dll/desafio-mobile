@@ -2,9 +2,10 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import Header from '../../components/Header';
 import Input from '../../components/Input';
-import { InputValueRef } from '../../components/Input/types';
 import Typography from '../../components/Typography';
 import UserCard from '../../components/UserCard';
+
+import type { InputValueRef } from '../../components/Input/types';
 
 import { getUsers, Users } from '../../services/usersApi';
 

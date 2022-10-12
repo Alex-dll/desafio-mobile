@@ -1,5 +1,6 @@
-import type { NamePhotoTypes } from '../../constants/photos';
 import { api } from '../api';
+
+import type { NamePhotoTypes } from '../../constants/photos';
 
 export type User = {
   id: number;
