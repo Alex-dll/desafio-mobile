@@ -46,7 +46,7 @@ export const CardImage = styled.Image.attrs<CardImageProps>(
 )`
   width: 34px;
   height: 34px;
-  border-radius: 14px;
+  border-radius: 20px;
 `;
 
 export const BodyCard = styled.View``;
