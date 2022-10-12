@@ -2,6 +2,11 @@
   "name": "bemobile",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "Alex Sandro <alex.sandro@gmail.com> [https://github.com/Alex-dll]",
+  "description": "Desafio Be Mobile React Native",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "expo start --dev-client",
     "android": "expo run:android",
@@ -11,7 +16,6 @@
   },
   "dependencies": {
     "@expo-google-fonts/roboto": "^0.2.2",
-    "@tanstack/react-query": "^4.10.3",
     "@types/react": "~18.0.0",
     "@types/react-native": "~0.69.1",
     "@types/styled-components-react-native": "^5.1.3",
