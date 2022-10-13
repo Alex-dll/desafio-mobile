@@ -10,7 +10,7 @@ export const InputInternal = styled.TextInput`
   font-family: ${({ theme }) => theme.typography.h3.fontFamily};
   color: ${({ theme }) => theme.colors.gray20.main};
   min-height: 48px;
-  padding-left: 16px;
+  padding-left: ${({ theme }) => theme.spacing.regular}px;
 `;
 
 interface BorderProps {
@@ -21,12 +21,12 @@ export const Border = styled.View<BorderProps>`
   background-color: ${({ theme }) => theme.colors.white.main};
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.spacing.little}px;
   flex-direction: row;
   border-color: ${({ borderColor }) => borderColor};
   border-width: 1px;
 `;
 
 export const IconContainer = styled.View`
-  padding-right: 16px;
+  padding-right: ${({ theme }) => theme.spacing.regular}px;
 `;
