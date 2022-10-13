@@ -41,6 +41,10 @@ export const FlatListContainer = styled.View`
   padding-bottom: ${({ theme }) => theme.spacing.regular2}px;
 `;
 
+export const TextContainer = styled.View`
+  margin: ${({ theme }) => theme.spacing.regular}px;
+`;
+
 export const CardImage = styled.Image.attrs<CardImageProps>(
   ({ source }) => source,
 )`
