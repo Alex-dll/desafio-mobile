@@ -1,51 +1,46 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Typography from '../../components/Typography';
 import UserCard from '../../components/UserCard';
 
-import type { InputValueRef } from '../../components/Input/types';
-
 import { getUsers, Users } from '../../services/usersApi';
 
 import { Container, Wrapper, TextContainer, CardsContainer } from './styles';
 
 const Home: React.FC = () => {
-  const refSearch = useRef<InputValueRef>({ value: '' });
   const [users, setUsers] = useState<Users>([] as Users);
-  const [usersFiltered, setUsersFiltered] = useState<Users | undefined>(
-    undefined,
-  );
+
   const [finallyUsers, setFinallyUsers] = useState<Users>([] as Users);
+  const [value, setValue] = useState('');
 
   async function getUsersByFetch() {
     const data = await getUsers();
     setUsers(data);
   }
 
-  const handleChangeUsersFiltered = useCallback(() => {
+  const usersFiltered = useMemo(() => {
     const usersFined = users.filter(
       user =>
-        user.name.includes(refSearch.current.value) ||
-        user.office.includes(refSearch.current.value) ||
-        user.phoneNumber.toString().includes(refSearch.current.value),
+        user.name.includes(value) ||
+        user.office.includes(value) ||
+        user.phoneNumber.toString().includes(value),
     );
-
-    setUsersFiltered(usersFined);
-  }, [users]);
+    return usersFined;
+  }, [users, value]);
 
   useEffect(() => {
     getUsersByFetch();
   }, []);
 
   useEffect(() => {
-    if (!usersFiltered || !refSearch.current.value) {
+    if (!usersFiltered || !value) {
       setFinallyUsers(users);
     } else {
       setFinallyUsers(usersFiltered);
     }
-  }, [users, usersFiltered]);
+  }, [users, usersFiltered, value]);
 
   return (
     <Container>
@@ -57,11 +52,7 @@ const Home: React.FC = () => {
           </Typography>
         </TextContainer>
 
-        <Input
-          ref={refSearch}
-          placeholder="Pesquisar"
-          onChangeText={handleChangeUsersFiltered}
-        />
+        <Input value={value} onChangeText={setValue} placeholder="Pesquisar" />
 
         <CardsContainer>
           {!!users && <UserCard users={finallyUsers} />}

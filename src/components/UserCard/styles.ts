@@ -38,7 +38,11 @@ interface CardImageProps extends ImageProps {
 export const FlatListContainer = styled.View`
   max-height: 500px;
   height: 80%;
-  padding-bottom: 20px;
+  padding-bottom: ${({ theme }) => theme.spacing.regular2}px;
+`;
+
+export const TextContainer = styled.View`
+  margin: ${({ theme }) => theme.spacing.regular}px;
 `;
 
 export const CardImage = styled.Image.attrs<CardImageProps>(
@@ -46,13 +50,13 @@ export const CardImage = styled.Image.attrs<CardImageProps>(
 )`
   width: 34px;
   height: 34px;
-  border-radius: 20px;
+  border-radius: ${({ theme }) => theme.spacing.regular2}px;
 `;
 
 export const RowCard = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: ${({ theme }) => theme.spacing.regular}px;
   padding: 0 16px;
 `;

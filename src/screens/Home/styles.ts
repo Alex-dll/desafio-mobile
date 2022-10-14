@@ -6,7 +6,7 @@ export const Container = styled.View`
 `;
 
 export const Wrapper = styled.View`
-  padding: 20px;
+  padding: ${({ theme }) => theme.spacing.regular2}px;
 `;
 
 export const TextContainer = styled.View`
@@ -14,5 +14,5 @@ export const TextContainer = styled.View`
 `;
 
 export const CardsContainer = styled.View`
-  margin-top: 20px;
+  margin-top: ${({ theme }) => theme.spacing.regular2}px;
 `;

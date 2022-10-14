@@ -17,6 +17,7 @@ import {
   CardImage,
   RowCard,
   FlatListContainer,
+  TextContainer,
 } from './styles';
 import formatPhone from '../../utils/formatPhone';
 import formatDate from '../../utils/formatDate';
@@ -108,7 +109,13 @@ const UserCard: React.FC<UserCardProps> = ({ users }: UserCardProps) => {
           keyExtractor={user => `${user.id}`}
           data={users}
           showsVerticalScrollIndicator={false}
-          ListEmptyComponent={<Typography>Sem Funcionários</Typography>}
+          ListEmptyComponent={
+            <TextContainer>
+              <Typography fontStyle="h2" color="gray20">
+                Sem Funcionários
+              </Typography>
+            </TextContainer>
+          }
           ItemSeparatorComponent={Separator}
           renderItem={renderItem}
         />
